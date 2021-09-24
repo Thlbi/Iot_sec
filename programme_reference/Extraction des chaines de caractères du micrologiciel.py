@@ -43,14 +43,24 @@ def checksumFile(filename):
 
     tab=[]
 
-    """
+
     for i in range(len(donnees)):
         nbcarac=0
-        for j in range(0,len(donnees[i],2)
-            val=donnees[j:j+2]
-        c.isprintable()
+        data=donnees[i]
+        chaine = ""
+        for j in range(0,len(data),2):
+            val=data[j:j+2]
+            val2=int(val,16)
+            c=chr(val2)
+            if (c.isprintable()):
+                nbcarac+=1
+            chaine+=c
+        if (nbcarac>5):
+            print(chaine)
+        nbcarac=0
+            #c.isprintable()
 #on prend en compte les caractères affichables (de 20 à 7D
-    """
-#checksumFile('firmware_tp3_v2.33.hex')
 
-checksum(data)
+checksumFile('firmware_tp3_v2.33.hex')
+
+#checksum(data)
